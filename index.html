@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Hotel Jardim</title>
+<meta name="theme-color" content="#1F6F4A">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+<header class="top"><div class="brand"><img src="icon-192.png" alt=""><span>Hotel Jardim</span></div>
+  <div class="top-act"><button id="btnBell" class="icon-btn" aria-label="Alertas">🔔<span id="bellBadge" class="badge" hidden></span></button>
+  <button id="btnTheme" class="icon-btn" aria-label="Tema claro/escuro">◐</button>
+  <button id="btnSair" class="icon-btn" aria-label="Sair" hidden>⎋</button></div></header>
+
+<section id="login" class="view" hidden>
+  <div class="card login-card">
+    <h1>Bem-vindo ao Hotel Jardim</h1>
+    <p class="muted">Entre com o mesmo e-mail e senha da sua conta.</p>
+    <form id="loginForm">
+      <label>E-mail<input type="email" name="email" required autocomplete="username"></label>
+      <label>Senha<input type="password" name="senha" required autocomplete="current-password"></label>
+      <div id="captcha"></div>
+      <button class="btn primary full" type="submit">Entrar</button>
+      <p id="loginMsg" class="msg" role="alert"></p>
+    </form>
+  </div>
+</section>
+
+<main id="app" hidden></main>
+
+<nav id="nav" class="nav" hidden>
+  <button data-tab="inicio" class="on"><span>🏠</span>Início</button>
+  <button data-tab="hotel"><span>🛏️</span>Hotel</button>
+  <button data-tab="financas"><span>💰</span>Finanças</button>
+  <button data-tab="credito"><span>🤝</span>Crédito<i id="navBadge" class="badge" hidden></i></button>
+  <button data-tab="agenda"><span>📅</span>Agenda</button>
+  <button data-tab="chat"><span>💬</span>Chat<i id="chatBadge" class="badge" hidden></i></button>
+</nav>
+
+<dialog id="dlg"><form id="dlgForm" method="dialog"><h2 id="dlgTitle"></h2><div id="dlgBody"></div>
+  <div class="dlg-act"><button type="button" class="btn ghost" id="dlgCancel">Cancelar</button><button class="btn primary" id="dlgOk" value="ok">Salvar</button></div></form></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script>
+<script src="config.js?v=1"></script>
+<script src="calc.js?v=1"></script>
+<script src="chat.js?v=1"></script>
+<script src="app.js?v=1"></script>
+</body>
+</html>
